@@ -26,9 +26,5 @@ if [ -z "$TOKEN" ]; then
 fi
 
 sed -e "s/{{USER}}/$USER/g; s/{{TOKEN}}/$TOKEN/g" hub.tmpl >> hub
-if [ -f ~/.config ]; then
-    echo "config existerer"
-fi
-
-
+echo "Har lavet en hub config, kopier denne til til ~/.config/hub"
 
