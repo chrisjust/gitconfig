@@ -8,26 +8,28 @@
 	editor = winpty vim
 	autocrlf = true
 [alias]
-    	# rebase on master and go back to current branch
+    # rebase on master and go back to current branch
 	rebasemaster = !git checkout master && git pull && git checkout - && git rebase -
-    	# Pretty logs! shows commit SHA+Commit message and files changed
+    # Pretty logs! shows commit SHA+Commit message and files changed
 	logp = log --pretty=oneline --name-only
 	# Outputs last commit
 	last = log -1 HEAD --name-only
 	# Just a shortcut for easily pushing the branch if it doesn't exist at origin
-    	pushbranch = !git push --set-upstream origin $(git rev-parse --abbrev-ref HEAD)
+    pushbranch = !git push --set-upstream origin $(git rev-parse --abbrev-ref HEAD)
+    # references above
+    pushb = pushbranch
 	# Force push, prefer with lease, should be 'safer' than regular push
 	pushf = push --force-with-lease
 	# Get current branch, useful for scripts
 	current = rev-parse --abbrev-ref HEAD
 	# Interactive add current folder
-    	ai = add -i .
+    ai = add -i .
 	# status shorthand
-    	st = status
+    st = status
 	# Creates a pull-request
 	pr = !git push && hub pull-request -o
 	# Opens browser on current pull-request
-    	prshow = !hub pr show
+    prshow = !hub pr show
 [diff]
     tool = kdiff3
 [difftool "kdiff3"]
