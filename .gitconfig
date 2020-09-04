@@ -23,6 +23,9 @@
 	# Get current branch, useful for scripts
 	current = rev-parse --abbrev-ref HEAD
 	# Interactive add current folder
+	pushcurrent = push --set-upstream origin $(git current)
+    # Deletes local merged branches
+    deleteMerged = !git branch --merged | egrep -v \"(^\\*|master|dev|develop)\" | xargs git branch -d
     ai = add -i .
 	# status shorthand
     st = status
