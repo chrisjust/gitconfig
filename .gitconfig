@@ -3,30 +3,27 @@
 	editor = winpty vim
 	autocrlf = true
 [alias]
-    # rebase on master and go back to current branch
-	rebasemaster = !git checkout master && git pull && git checkout - && git rebase -
-    # Pretty logs! shows commit SHA+Commit message and files changed
-	logp = log --pretty=oneline --name-only
-	# Outputs last commit
+    rebasemaster = !git checkout master && git pull && git checkout - && git rebase - --autostash
+    logp = log --pretty=oneline
 	last = log -1 HEAD --name-only
-	# Just a shortcut for easily pushing the branch if it doesn't exist at origin
+	mwps = push -o merge_request.create -o merge_request.target=master -o merge_request.merge_when_pipeline_succeeds
+	pushrequest = push -o merge_request.create -o merge_request.target=master
     pushbranch = !git push --set-upstream origin $(git rev-parse --abbrev-ref HEAD)
-    # references above
     pushb = pushbranch
-	# Force push, prefer with lease, should be 'safer' than regular push
 	pushf = push --force-with-lease
-	# Get current branch, useful for scripts
 	current = rev-parse --abbrev-ref HEAD
-    # Deletes local merged branches
-    deleteMerged = !git branch --merged | egrep -v \"(^\\*|master|dev|develop)\" | xargs git branch -d
-	# Interactive add current folder
-    ai = add -i .
-	# status shorthand
-    st = status
-	# Creates a pull-request
-	pr = !git push && hub pull-request -o
-	# Opens browser on current pull-request
+	pr = !git push && hub pull-request -po
+    ci = commit --interactive
+	ci-status = !hub ci-status
+	merge-pr = !hub merge
     prshow = !hub pr show
+	pushcurrent = push --set-upstream origin $(git current)
+    git = ! echo gut
+    ddd = ! git branch --merged | egrep -v "master" | xargs git branch -d
+    deleteMerged = !git branch --merged | egrep -v \"(^\\*|master|dev|develop)\" | xargs git branch -d
+	gut = ! start https://i0.wp.com/codeblog.dotsandbrackets.com/wp-content/uploads/2016/09/dockerize.jpg?resize=269%2C202
+    ai = add -i .
+    st = status
 [diff]
     tool = kdiff3
 [difftool "kdiff3"]
