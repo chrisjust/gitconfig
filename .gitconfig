@@ -11,15 +11,11 @@
     	pushbranch = !git push --set-upstream origin $(git rev-parse --abbrev-ref HEAD)
     	pushb = pushbranch
 	pushf = push --force-with-lease
-	current = rev-parse --abbrev-ref HEAD
 	pr = !git push && hub pull-request -po
     	ci = commit --interactive
 	ci-status = !hub ci-status
 	merge-pr = !hub merge
     	prshow = !hub pr show
-	pushcurrent = push --set-upstream origin $(git current)
-    	git = ! echo gut
-    	ddd = ! git branch --merged | egrep -v "master" | xargs git branch -d
     	deleteMerged = !git branch --merged | egrep -v \"(^\\*|master|dev|develop)\" | xargs git branch -d
 	gut = ! start https://i0.wp.com/codeblog.dotsandbrackets.com/wp-content/uploads/2016/09/dockerize.jpg?resize=269%2C202
     	ai = add -i .
