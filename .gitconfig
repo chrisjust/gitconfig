@@ -3,34 +3,34 @@
 	editor = winpty vim
 	autocrlf = true
 [alias]
-    rebasemaster = !git checkout master && git pull && git checkout - && git rebase - --autostash
-    logp = log --pretty=oneline
+    	rebasemaster = !git checkout master && git pull && git checkout - && git rebase - --autostash
+    	logp = log --pretty=oneline
 	last = log -1 HEAD --name-only
 	mwps = push -o merge_request.create -o merge_request.target=master -o merge_request.merge_when_pipeline_succeeds
 	pushrequest = push -o merge_request.create -o merge_request.target=master
-    pushbranch = !git push --set-upstream origin $(git rev-parse --abbrev-ref HEAD)
-    pushb = pushbranch
+    	pushbranch = !git push --set-upstream origin $(git rev-parse --abbrev-ref HEAD)
+    	pushb = pushbranch
 	pushf = push --force-with-lease
 	current = rev-parse --abbrev-ref HEAD
 	pr = !git push && hub pull-request -po
-    ci = commit --interactive
+    	ci = commit --interactive
 	ci-status = !hub ci-status
 	merge-pr = !hub merge
-    prshow = !hub pr show
+    	prshow = !hub pr show
 	pushcurrent = push --set-upstream origin $(git current)
-    git = ! echo gut
-    ddd = ! git branch --merged | egrep -v "master" | xargs git branch -d
-    deleteMerged = !git branch --merged | egrep -v \"(^\\*|master|dev|develop)\" | xargs git branch -d
+    	git = ! echo gut
+    	ddd = ! git branch --merged | egrep -v "master" | xargs git branch -d
+    	deleteMerged = !git branch --merged | egrep -v \"(^\\*|master|dev|develop)\" | xargs git branch -d
 	gut = ! start https://i0.wp.com/codeblog.dotsandbrackets.com/wp-content/uploads/2016/09/dockerize.jpg?resize=269%2C202
-    ai = add -i .
-    st = status
+    	ai = add -i .
+    	st = status
 [diff]
-    tool = kdiff3
+    	tool = kdiff3
 [difftool "kdiff3"]
-    path = kdiff3.exe
+    	path = kdiff3.exe
 [difftool]
-    prompt = false
-    keepBackup = false
-    trustExitCode = false
+    	prompt = false
+    	keepBackup = false
+    	trustExitCode = false
 [merge]
-    tool = kdiff3
+    	tool = kdiff3
