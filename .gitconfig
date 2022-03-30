@@ -24,6 +24,7 @@
 	gut = ! start https://i0.wp.com/codeblog.dotsandbrackets.com/wp-content/uploads/2016/09/dockerize.jpg?resize=269%2C202
     	ai = add -i .
     	st = status
+	checkoutqa = "!sh -c \"git checkout -b $1-qa\""
 [diff]
     	tool = kdiff3
 [difftool "kdiff3"]
