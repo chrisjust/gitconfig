@@ -17,7 +17,6 @@
 	merge-pr = !hub merge
     	prshow = !hub pr show
     	deleteMerged = !git branch --merged | egrep -v \"(^\\*|master|dev|develop)\" | xargs git branch -d
-	gut = ! start https://i0.wp.com/codeblog.dotsandbrackets.com/wp-content/uploads/2016/09/dockerize.jpg?resize=269%2C202
     	ai = add -i .
     	st = status
 	checkoutqa = "!sh -c \"git checkout -b $1-qa\""
