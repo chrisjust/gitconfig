@@ -20,6 +20,7 @@
     	ai = add -i .
     	st = status
 	checkoutqa = "!sh -c \"git checkout -b $1-qa\""
+	my-branches = "!sh -c \"git for-each-ref --format=' %(authorname) %09 %(refname)' --sort=authorname | grep \"$(git config user.name)\"\"" 
 [diff]
     	tool = kdiff3
 [difftool "kdiff3"]
